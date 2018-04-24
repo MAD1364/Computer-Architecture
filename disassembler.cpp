@@ -384,13 +384,14 @@ int main(int argc, char* argv[])
 	    string_count++;
 	}while(byte != '\0');
 
-	assembly_file << name << ":" << '\t';
-
 	if (name == "main")
 	    break;
 	else
+	{
+	    assembly_file << name << ":" << '\t';
 	    name = "";
-
+	}
+	    
 	if (object_file.eof())
 	    object_file.clear();
 
